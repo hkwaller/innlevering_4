@@ -9,7 +9,8 @@ var express =               require('express'),
     db =                    require('./db.js'),
     auth =                  require('./auth')
 
-app.use('/', express.static(__dirname + '/webapp/'))
+app.use('/', express.static(__dirname + '/webapp/public'))
+app.use('/node_modules', express.static(__dirname + '/webapp/node_modules'))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
